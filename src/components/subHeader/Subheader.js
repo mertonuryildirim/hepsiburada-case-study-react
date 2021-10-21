@@ -1,5 +1,7 @@
+import './subheader.css';
+
 const Subheader = () => {
-    return <div>Subheader</div>;
+    return <div className="subheader">Subheader</div>;
 };
 
 export default Subheader;

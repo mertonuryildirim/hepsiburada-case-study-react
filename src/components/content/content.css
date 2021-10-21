@@ -1,0 +1,15 @@
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.content {
+    flex: 0.8;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: fit-content;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

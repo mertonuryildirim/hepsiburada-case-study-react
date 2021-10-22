@@ -7,14 +7,16 @@ const products = [];
 for (let i = 0; i < 36; i++) {
     products.push({
         id: i,
-        name: 'iPhone 7',
-        oldPrice: 100,
-        newPrice: 90,
+        name: 'Apple iPhone 11 Pro Maxi Phone 11 Pro Max iPhone 11 (Max 2 Line)...',
+        oldPrice: 13000,
+        newPrice: 11700,
         discount: '%10',
-        color: 'Kırmızı',
+        color: 'Siyah',
         brand: 'Apple',
         addedTime: `14${i}5723766805`,
         quantity: i,
+        imageSrc:
+            'https://productimages.hepsiburada.net/s/119/550/110000068434980.jpg/format:webp',
     });
 }
 

@@ -1,63 +1,88 @@
 .product {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: auto;
-    text-align: center;
-    font-family: arial;
+    font-family: Roboto;
     margin-bottom: 20px;
     border-radius: 10%;
-    min-width: 170px;
-    max-width: 170px;
-}
-
-.product > img {
-    width: 100%;
+    min-width: 254px;
+    max-width: 254px;
 }
 
 .product-image {
     border: 0.1px solid lightgray;
-    border-radius: 5%;
-    padding: 12px 5px;
+    border-radius: 3%;
+    padding: 5px 5px;
+    height: 339px;
 }
 
 .product-image > span {
-    height: 100px;
-    width: 110px;
-    background-color: #bbb;
+    height: 332px;
+    width: 247px;
+    background-color: #ffffff;
     display: inline-block;
 }
 
 .product > p {
-    color: #191919;
-    font-size: 18px;
+    color: #484848;
     justify-content: flex-start;
     display: flex;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
 }
 
-.product-price {
-    color: var(--market-color-2) !important;
-    font-size: 15px;
-    justify-content: flex-start;
-    display: flex;
-    margin-bottom: 5px;
+.product > div > h4 {
+    color: #000000 !important;
+}
+
+.product > div > h4,
+p {
+    display: inline-block;
+    vertical-align: middle;
+    color: #484848;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.product-new-price {
+    margin: 0;
+    font-size: 16px !important;
     margin-top: 10px;
+}
+
+.product-old-price {
+    margin: 0;
+    font-size: 16px !important;
 }
 
 .product > button {
     border: none;
     outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: var(--market-color-2);
+    padding: 10px;
     text-align: center;
     cursor: pointer;
     width: 100%;
     font-size: 15px;
-    border-radius: 5%;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
+    text-align: center;
+    color: #ff6000;
+    background: rgba(255, 96, 0, 0.11);
+    border-radius: 8px;
 }
 
 .product > button:hover {
-    background-color: #f2f0fd;
-    color: var(--market-color-2);
+    background-color: rgba(255, 96, 0, 0.12);
+    color: rgb(255, 96, 0);
 }

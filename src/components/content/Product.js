@@ -15,14 +15,31 @@ const Product = ({ product }) => {
                     />
                 </span>
             </div>
-            <p style={{ height: '20px' }}>{product.name}</p>
-            <p>Marka: {product.brand}</p>
-            <p>Renk: {product.color}</p>
-            <p className="product-price">₺ {product.newPrice}</p>
-            <p className="product-price">
-                ₺ <del>{product.oldPrice}</del> {product.discount}
-            </p>
-            <button onClick={() => handleAddToCart(product)}>Add</button>
+
+            <p>{product.name}</p>
+
+            <div>
+                <h4>Marka:</h4> <p>{product.brand}</p>
+            </div>
+
+            <div>
+                <h4>Renk:</h4>
+                <p>{product.color}</p>
+            </div>
+
+            <h4 className="product-new-price">{product.newPrice} TL</h4>
+
+            <div className="product-old-price">
+                <del style={{ color: '#9B9B9B' }}>{product.oldPrice} TL</del>
+                &nbsp;
+                <p style={{ color: '#F90000', fontSize: '16px' }}>
+                    {product.discount}
+                </p>
+            </div>
+
+            <button onClick={() => handleAddToCart(product)}>
+                Sepete Ekle
+            </button>
         </div>
     );
 };

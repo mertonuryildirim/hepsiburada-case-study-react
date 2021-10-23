@@ -7,14 +7,6 @@ export const instance = axios.create({
     headers: { 'Content-Type': 'application/json' },
 });
 
-export const listProductsService = async () => {
-    return await instance.post('/products', {
-        search: '',
-        color: '',
-        sortOrder: '',
-        sortBy: '',
-        brand: '',
-        page: '',
-        limit: '',
-    });
+export const listProductsService = async (filteringData) => {
+    return await instance.post('/products', filteringData);
 };

@@ -1,4 +1,6 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { listProducts } from '../../store/actions/productActions';
 import './content.css';
 import Product from './Product';
 
@@ -20,6 +22,22 @@ for (let i = 0; i < 36; i++) {
 }
 
 const Content = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(
+            listProducts({
+                search: '',
+                color: '',
+                sortOrder: '',
+                sortBy: '',
+                brand: '',
+                page: '',
+                limit: '',
+            }),
+        );
+    }, [dispatch]);
+
     return (
         <div className="content">
             <div className="card">

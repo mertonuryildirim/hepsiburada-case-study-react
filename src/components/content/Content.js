@@ -15,8 +15,7 @@ for (let i = 0; i < 36; i++) {
         brand: 'Apple',
         addedTime: `14${i}5723766805`,
         quantity: i,
-        imageSrc:
-            'https://productimages.hepsiburada.net/s/119/550/110000068434980.jpg/format:webp',
+        imageSrc: '110000068435156.jpg',
     });
 }
 

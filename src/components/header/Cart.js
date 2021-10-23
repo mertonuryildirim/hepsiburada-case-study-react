@@ -13,7 +13,6 @@ const Cart = () => {
         setShowRemoveFromCartModal(true);
     };
 
-    console.log(showRemoveFromCartModal);
     return (
         <div className="dropdown">
             <button>Sepetim</button>

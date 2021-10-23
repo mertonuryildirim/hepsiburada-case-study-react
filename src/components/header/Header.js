@@ -10,9 +10,10 @@ const Header = () => {
                 placeholder="25 milyon'dan fazla ürün içerisinde ara"
             />
 
-            <div class="dropdown">
+            <div className="dropdown">
                 <button>Sepetim</button>
-                <div class="dropdown-content">
+                <span className="basket-quantity">3</span>
+                <div className="dropdown-content">
                     <p>Hello World!</p>
                 </div>
             </div>

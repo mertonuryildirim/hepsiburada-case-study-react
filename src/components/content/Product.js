@@ -28,13 +28,19 @@ const Product = ({ product }) => {
                 <p>{product.color}</p>
             </div>
 
-            <h4 className="product-new-price">{product.newPrice} TL</h4>
+            <h4 className="product-new-price">
+                {(
+                    Number(product.price) -
+                    Number(product.price) * (Number(product.discountRate) / 100)
+                ).toFixed(2)}
+                &nbsp;TL
+            </h4>
 
             <div className="product-old-price">
-                <del style={{ color: '#9B9B9B' }}>{product.oldPrice} TL</del>
+                <del style={{ color: '#9B9B9B' }}>{product.price} TL</del>
                 &nbsp;
                 <span style={{ color: '#F90000', fontSize: '16px' }}>
-                    {product.discount}
+                    %{product.discountRate}
                 </span>
             </div>
 

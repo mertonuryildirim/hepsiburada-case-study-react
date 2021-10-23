@@ -7,11 +7,6 @@
     max-width: 254px;
 }
 
-.product:hover {
-    border: 0.1px solid lightgray;
-    border-radius: 3%;
-}
-
 .product-image {
     border: 0.1px solid lightgray;
     border-radius: 3%;

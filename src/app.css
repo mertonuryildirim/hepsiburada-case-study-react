@@ -12,17 +12,15 @@
     max-width: 1550px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 10px;
 }
 
 .card {
     transition: 0.3s;
-    padding: 10px 5px;
+    padding: 10px px;
     margin-top: 10px;
 }
 
 .container {
-    padding: 2px 16px;
     display: flex;
     flex-wrap: wrap;
     max-width: fit-content;

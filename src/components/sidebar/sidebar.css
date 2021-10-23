@@ -8,4 +8,43 @@
 .sidebar-filters {
     display: flex;
     flex-direction: column;
+    font-family: Roboto;
+    font-style: normal;
+    margin-top: 35px;
+}
+
+.sidebar-filter-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #484848;
+}
+
+.filter-options {
+    padding: 2px 16px 2px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: fit-content;
+    margin-top: 15px;
+    min-width: -webkit-fill-available;
+}
+
+.filter-options > span {
+    display: block;
+    position: relative;
+    margin-bottom: 5px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #646464;
+}
+
+.filter-options > span:active {
+    color: #ff6000;
 }

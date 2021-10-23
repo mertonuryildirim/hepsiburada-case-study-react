@@ -7,18 +7,18 @@ const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="sidebar-filters">
-                <div>
-                    <h5>Renk</h5>
+                <div style={{ marginBottom: '20px' }}>
+                    <span className="sidebar-filter-title">Renk</span>
                     <TagsFiltering />
                 </div>
 
-                <div>
-                    <h5>Sıralama</h5>
+                <div style={{ marginBottom: '20px' }}>
+                    <span className="sidebar-filter-title">Sıralama</span>
                     <OrderFiltering />
                 </div>
 
-                <div>
-                    <h5>Marka</h5>
+                <div style={{ marginBottom: '20px' }}>
+                    <span className="sidebar-filter-title">Marka</span>
                     <BrandFilterings />
                 </div>
             </div>

@@ -10,9 +10,9 @@ const Subheader = () => {
                 </div>
             </div>
 
-            <div class="dropdown">
+            <div className="dropdown">
                 <button>Sıralama &#9660;</button>
-                <div class="dropdown-content">
+                <div className="dropdown-content">
                     <div
                         style={{ textAlign: 'center' }}
                         className="filter-options"

@@ -7,6 +7,10 @@
     max-width: 254px;
 }
 
+.product:hover {
+    display: none;
+}
+
 .product-image {
     border: 0.1px solid lightgray;
     border-radius: 3%;
@@ -31,17 +35,22 @@
     font-weight: normal;
     font-size: 12px;
     line-height: 14px;
+    margin: 10px 10px;
 }
 
 .product > div > h4 {
-    color: #000000 !important;
+    color: black !important;
+}
+
+.product > div > p {
+    color: #484848 !important;
 }
 
 .product > div > h4,
 p {
+    margin-left: 10px;
     display: inline-block;
     vertical-align: middle;
-    color: #484848;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -55,11 +64,13 @@ p {
     margin: 0;
     font-size: 16px !important;
     margin-top: 10px;
+    margin-left: 10px;
 }
 
 .product-old-price {
     margin: 0;
     font-size: 16px !important;
+    margin-left: 10px;
 }
 
 .product > button {
@@ -80,6 +91,8 @@ p {
     color: #ff6000;
     background: rgba(255, 96, 0, 0.11);
     border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .product > button:hover {

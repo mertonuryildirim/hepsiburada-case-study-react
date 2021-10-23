@@ -29,7 +29,6 @@
 .filter-options > span {
     display: block;
     position: relative;
-    margin-bottom: 5px;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;

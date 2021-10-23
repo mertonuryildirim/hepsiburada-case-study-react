@@ -4,8 +4,10 @@ const Subheader = () => {
     return (
         <div className="subheader">
             <div className="search-result">
-                <span>iPhone İOS Cep Telefonu</span> <br />
-                <span>Aranan Kelime: iphone 11</span>
+                <span>iPhone İOS cep telefonu</span> <br />
+                <div>
+                    <h4>Aranan Kelime:</h4> <p>iphone 11</p>
+                </div>
             </div>
 
             <div class="dropdown">

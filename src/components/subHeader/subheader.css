@@ -20,7 +20,7 @@
     color: #484848;
 }
 
-.search-result > span:nth-child(2) {
+.search-result > div > h4 {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -28,5 +28,19 @@
     line-height: 100%;
     display: flex;
     align-items: center;
-    color: #b0b0b0;
+    color: #b0b0b0 !important;
+}
+
+.search-result > div > h4,
+p {
+    display: inline-block;
+    vertical-align: middle;
+    color: black;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
 }

@@ -19,7 +19,8 @@ const Product = ({ product }) => {
             <p>{product.name}</p>
 
             <div>
-                <h4>Marka:</h4> <p>{product.brand}</p>
+                <h4>Marka:</h4>
+                <p>{product.brand}</p>
             </div>
 
             <div>
@@ -32,9 +33,9 @@ const Product = ({ product }) => {
             <div className="product-old-price">
                 <del style={{ color: '#9B9B9B' }}>{product.oldPrice} TL</del>
                 &nbsp;
-                <p style={{ color: '#F90000', fontSize: '16px' }}>
+                <span style={{ color: '#F90000', fontSize: '16px' }}>
                     {product.discount}
-                </p>
+                </span>
             </div>
 
             <button onClick={() => handleAddToCart(product)}>

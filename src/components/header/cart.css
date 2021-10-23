@@ -1,0 +1,35 @@
+.cart-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+.cart-content > img {
+    width: 100px;
+    height: 100px;
+}
+
+.cart-content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+.cart-content > div > span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #484848;
+}
+
+.cart-content > div > button {
+    background: #ffffff;
+    border: 1px solid #f90000;
+    border-radius: 4px;
+    color: #f90000;
+    cursor: pointer;
+    max-width: 60px;
+}

@@ -63,6 +63,8 @@
     box-sizing: border-box;
     border-radius: 4px;
     outline: none;
+    width: 300px;
+    padding: 20px 20px;
 }
 
 .dropdown:hover .dropdown-content {

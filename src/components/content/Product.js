@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/actions/cartActions';
 import './product.css';
@@ -5,16 +6,25 @@ import './product.css';
 const Product = ({ product }) => {
     const dispatch = useDispatch();
     const { cartItems } = useSelector((state) => state.cartItems);
+    const [cart, setCart] = useState([]);
 
     const isProductOnCart = (productId) => {
-        return (
-            cartItems.findIndex((cartItem) => cartItem.id === productId) === -1
-        );
+        return cart.findIndex((cartItem) => cartItem.id === productId) === -1;
     };
 
     const handleAddToCart = (product) => {
         dispatch(addToCart(product));
     };
+
+    useEffect(() => {
+        if (localStorage.getItem('cart') === null) {
+            setCart(cartItems);
+        } else if (
+            JSON.parse(localStorage.getItem('cart')).cartItems !== null
+        ) {
+            setCart(JSON.parse(localStorage.getItem('cart')).cartItems);
+        }
+    }, [cartItems]);
 
     return (
         <div className="product">

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromCart } from '../../store/actions/cartActions';
 import './cart.css';
@@ -6,6 +6,7 @@ import './cart.css';
 const Cart = () => {
     const dispatch = useDispatch();
     const { cartItems } = useSelector((state) => state.cartItems);
+    const [cart, setCart] = useState([]);
     const [deleteProductId, setDeleteProductId] = useState('');
     const [showRemoveFromCartModal, setShowRemoveFromCartModal] =
         useState(false);
@@ -23,16 +24,26 @@ const Cart = () => {
         setShowRemoveFromCartModal(true);
     };
 
+    useEffect(() => {
+        if (localStorage.getItem('cart') === null) {
+            setCart(cartItems);
+        } else if (
+            JSON.parse(localStorage.getItem('cart')).cartItems !== null
+        ) {
+            setCart(JSON.parse(localStorage.getItem('cart')).cartItems);
+        }
+    }, [cartItems]);
+
     return (
         <div className="dropdown">
             <button>Sepetim</button>
-            {cartItems.length ? (
-                <span className="basket-quantity">{cartItems.length}</span>
+            {cart.length ? (
+                <span className="basket-quantity">{cart.length}</span>
             ) : (
                 <div></div>
             )}
             <div className="dropdown-content">
-                {cartItems
+                {cart
                     .slice(0)
                     .reverse()
                     .map((cartItem) => (

@@ -17,7 +17,13 @@ const Pagination = ({ filteringData, handlePaginationChange }) => {
             <ul className="pagination">
                 <li className="page-item">
                     <a
-                        onClick={() => handlePagination(filteringData.page - 1)}
+                        onClick={() =>
+                            handlePagination(
+                                filteringData.page > 1
+                                    ? filteringData.page - 1
+                                    : filteringData.page,
+                            )
+                        }
                         href="!#"
                         className="page-link"
                     >
@@ -37,7 +43,13 @@ const Pagination = ({ filteringData, handlePaginationChange }) => {
                 ))}
                 <li className="page-item">
                     <a
-                        onClick={() => handlePagination(filteringData.page + 1)}
+                        onClick={() =>
+                            handlePagination(
+                                filteringData.page < pageNumbers.length
+                                    ? filteringData.page + 1
+                                    : filteringData.page,
+                            )
+                        }
                         href="!#"
                         className="page-link"
                     >

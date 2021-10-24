@@ -90,3 +90,8 @@ p {
     background-color: rgba(255, 96, 0, 0.12);
     color: rgb(255, 96, 0);
 }
+
+.product > button:disabled {
+    background-color: rgba(126, 126, 126, 0.11);
+    color: #b0b0b0;
+}

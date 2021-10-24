@@ -3,9 +3,9 @@ import './header.css';
 
 const Header = ({ handleFilteringDataChange }) => {
     const handleSearchInputChange = (event) => {
-        event.target.value.length > 2
-            ? handleFilteringDataChange(event)
-            : console.log('2 den küçük');
+        if (event.target.value.length > 2 || event.target.value.length === 0) {
+            handleFilteringDataChange(event);
+        }
     };
 
     return (

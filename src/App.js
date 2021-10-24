@@ -14,7 +14,7 @@ const App = () => {
         sortBy: '',
         brand: '',
         page: '',
-        limit: '',
+        limit: '12',
     });
 
     const handleFilteringDataChange = (event) => {

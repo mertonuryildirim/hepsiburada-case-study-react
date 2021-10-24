@@ -1,6 +1,9 @@
 import './subheader.css';
 
 const Subheader = ({ handleFilteringDataChange }) => {
+    const handleOrderFilteringChange = (event) => {
+        handleFilteringDataChange(event);
+    };
     return (
         <div className="subheader">
             <div className="search-result">
@@ -17,10 +20,45 @@ const Subheader = ({ handleFilteringDataChange }) => {
                         style={{ textAlign: 'center' }}
                         className="filter-options"
                     >
-                        <span>En Düşük Fiyat</span>
-                        <span>En Yüksek Fiyat</span>
-                        <span>En Yeniler (A&gt;Z)</span>
-                        <span>En Yeniler (Z&gt;A)</span>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="sortBy"
+                                value="price"
+                                onChange={(e) => handleOrderFilteringChange(e)}
+                            />
+                            <span>En Düşük Fiyat</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="sortBy"
+                                value="price"
+                                onChange={(e) => handleOrderFilteringChange(e)}
+                            />
+                            <span>En Yüksek Fiyat</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="sortBy"
+                                value="addedTime"
+                                onChange={(e) => handleOrderFilteringChange(e)}
+                            />
+                            <span>En Yeniler (A&gt;Z)</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="sortBy"
+                                value="addedTime"
+                                onChange={(e) => handleOrderFilteringChange(e)}
+                            />
+                            <span>En Yeniler (Z&gt;A)</span>
+                        </label>
                     </div>
                 </div>
             </div>

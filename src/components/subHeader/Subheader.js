@@ -1,14 +1,10 @@
-import { useState } from 'react';
 import './subheader.css';
 
-const Subheader = ({ handleFilteringDataChange }) => {
-    const [checkboxEvent, setCheckboxEvent] = useState({
-        sortPriceAsc: false,
-        sortPriceDesc: false,
-        sortAddedDesc: false,
-        sortAddedAsc: false,
-    });
-
+const Subheader = ({
+    handleFilteringDataChange,
+    sortCheckboxEvent,
+    setSortCheckboxEvent,
+}) => {
     return (
         <div className="subheader">
             <div className="search-result">
@@ -29,10 +25,10 @@ const Subheader = ({ handleFilteringDataChange }) => {
                             <input
                                 type="checkbox"
                                 name="sortPriceAsc"
-                                checked={checkboxEvent.sortPriceAsc}
+                                checked={sortCheckboxEvent.sortPriceAsc}
                                 onChange={(event) => {
                                     handleFilteringDataChange(event);
-                                    setCheckboxEvent({
+                                    setSortCheckboxEvent({
                                         sortPriceAsc: true,
                                         sortPriceDesc: false,
                                         sortAddedDesc: false,
@@ -47,10 +43,10 @@ const Subheader = ({ handleFilteringDataChange }) => {
                             <input
                                 type="checkbox"
                                 name="sortPriceDesc"
-                                checked={checkboxEvent.sortPriceDesc}
+                                checked={sortCheckboxEvent.sortPriceDesc}
                                 onChange={(event) => {
                                     handleFilteringDataChange(event);
-                                    setCheckboxEvent({
+                                    setSortCheckboxEvent({
                                         sortPriceAsc: false,
                                         sortPriceDesc: true,
                                         sortAddedDesc: false,
@@ -65,10 +61,10 @@ const Subheader = ({ handleFilteringDataChange }) => {
                             <input
                                 type="checkbox"
                                 name="sortAddedDesc"
-                                checked={checkboxEvent.sortAddedDesc}
+                                checked={sortCheckboxEvent.sortAddedDesc}
                                 onChange={(event) => {
                                     handleFilteringDataChange(event);
-                                    setCheckboxEvent({
+                                    setSortCheckboxEvent({
                                         sortPriceAsc: false,
                                         sortPriceDesc: false,
                                         sortAddedDesc: true,
@@ -83,10 +79,10 @@ const Subheader = ({ handleFilteringDataChange }) => {
                             <input
                                 type="checkbox"
                                 name="sortAddedAsc"
-                                checked={checkboxEvent.sortAddedAsc}
+                                checked={sortCheckboxEvent.sortAddedAsc}
                                 onChange={(event) => {
                                     handleFilteringDataChange(event);
-                                    setCheckboxEvent({
+                                    setSortCheckboxEvent({
                                         sortPriceAsc: false,
                                         sortPriceDesc: false,
                                         sortAddedDesc: false,

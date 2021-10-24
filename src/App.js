@@ -7,6 +7,12 @@ import Sidebar from './components/sidebar/Sidebar';
 import Subheader from './components/subHeader/Subheader';
 
 const App = () => {
+    const [sortCheckboxEvent, setSortCheckboxEvent] = useState({
+        sortPriceAsc: false,
+        sortPriceDesc: false,
+        sortAddedDesc: false,
+        sortAddedAsc: false,
+    });
     const [filteringData, setFilteringData] = useState({
         search: '',
         color: '',
@@ -28,10 +34,16 @@ const App = () => {
         <div className="app">
             <Header handleFilteringDataChange={handleFilteringDataChange} />
 
-            <Subheader handleFilteringDataChange={handleFilteringDataChange} />
+            <Subheader
+                sortCheckboxEvent={sortCheckboxEvent}
+                setSortCheckboxEvent={setSortCheckboxEvent}
+                handleFilteringDataChange={handleFilteringDataChange}
+            />
 
             <div className="app-body">
                 <Sidebar
+                    sortCheckboxEvent={sortCheckboxEvent}
+                    setSortCheckboxEvent={setSortCheckboxEvent}
                     handleFilteringDataChange={handleFilteringDataChange}
                 />
 

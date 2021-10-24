@@ -1,23 +1,18 @@
-import { useState } from 'react';
-
-const OrderFiltering = ({ handleFilteringDataChange }) => {
-    const [checkboxEvent, setCheckboxEvent] = useState({
-        sortPriceAsc: false,
-        sortPriceDesc: false,
-        sortAddedDesc: false,
-        sortAddedAsc: false,
-    });
-
+const OrderFiltering = ({
+    handleFilteringDataChange,
+    sortCheckboxEvent,
+    setSortCheckboxEvent,
+}) => {
     return (
         <div className="filter-options">
             <label>
                 <input
                     type="checkbox"
                     name="sortPriceAsc"
-                    checked={checkboxEvent.sortPriceAsc}
+                    checked={sortCheckboxEvent.sortPriceAsc}
                     onChange={(event) => {
                         handleFilteringDataChange(event);
-                        setCheckboxEvent({
+                        setSortCheckboxEvent({
                             sortPriceAsc: true,
                             sortPriceDesc: false,
                             sortAddedDesc: false,
@@ -32,10 +27,10 @@ const OrderFiltering = ({ handleFilteringDataChange }) => {
                 <input
                     type="checkbox"
                     name="sortPriceDesc"
-                    checked={checkboxEvent.sortPriceDesc}
+                    checked={sortCheckboxEvent.sortPriceDesc}
                     onChange={(event) => {
                         handleFilteringDataChange(event);
-                        setCheckboxEvent({
+                        setSortCheckboxEvent({
                             sortPriceAsc: false,
                             sortPriceDesc: true,
                             sortAddedDesc: false,
@@ -50,10 +45,10 @@ const OrderFiltering = ({ handleFilteringDataChange }) => {
                 <input
                     type="checkbox"
                     name="sortAddedDesc"
-                    checked={checkboxEvent.sortAddedDesc}
+                    checked={sortCheckboxEvent.sortAddedDesc}
                     onChange={(event) => {
                         handleFilteringDataChange(event);
-                        setCheckboxEvent({
+                        setSortCheckboxEvent({
                             sortPriceAsc: false,
                             sortPriceDesc: false,
                             sortAddedDesc: true,
@@ -68,10 +63,10 @@ const OrderFiltering = ({ handleFilteringDataChange }) => {
                 <input
                     type="checkbox"
                     name="sortAddedAsc"
-                    checked={checkboxEvent.sortAddedAsc}
+                    checked={sortCheckboxEvent.sortAddedAsc}
                     onChange={(event) => {
                         handleFilteringDataChange(event);
-                        setCheckboxEvent({
+                        setSortCheckboxEvent({
                             sortPriceAsc: false,
                             sortPriceDesc: false,
                             sortAddedDesc: false,

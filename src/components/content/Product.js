@@ -10,8 +10,8 @@ const Product = ({ product }) => {
                     <img
                         width="100%"
                         height="100%"
-                        src={product.imageSrc}
-                        alt={product.imageAlt}
+                        src="110000068435156.jpg"
+                        alt="basket-item-img"
                     />
                 </span>
             </div>

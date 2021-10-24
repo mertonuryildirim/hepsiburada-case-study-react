@@ -8,6 +8,7 @@ const Subheader = ({ handleFilteringDataChange }) => {
         sortAddedDesc: false,
         sortAddedAsc: false,
     });
+
     return (
         <div className="subheader">
             <div className="search-result">

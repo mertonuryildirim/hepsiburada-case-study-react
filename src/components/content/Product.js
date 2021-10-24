@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/actions/cartActions';
 import './product.css';
 
 const Product = ({ product }) => {
     const dispatch = useDispatch();
+    const [isProductAdded, setIsProductAdded] = useState(false);
 
     const handleAddToCart = (product) => {
+        setIsProductAdded(true);
         dispatch(addToCart(product));
     };
 
@@ -50,8 +53,13 @@ const Product = ({ product }) => {
                 </span>
             </div>
 
-            <button onClick={() => handleAddToCart(product)}>
-                Sepete Ekle
+            <button
+                disabled={isProductAdded}
+                onClick={() => handleAddToCart(product)}
+            >
+                {isProductAdded
+                    ? 'Bu ürünü sepete ekleyemezsiniz.'
+                    : 'Sepete Ekle'}
             </button>
         </div>
     );

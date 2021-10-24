@@ -72,14 +72,14 @@ const Cart = () => {
                         <div className="modal-footer">
                             <button
                                 onClick={() =>
-                                    handleCloseRemoveFromCartModal(true)
+                                    handleCloseRemoveFromCartModal(1)
                                 }
                             >
                                 EVET
                             </button>
                             <button
                                 onClick={() =>
-                                    handleCloseRemoveFromCartModal(false)
+                                    handleCloseRemoveFromCartModal(0)
                                 }
                             >
                                 HAYIR

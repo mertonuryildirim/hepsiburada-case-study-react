@@ -24,10 +24,44 @@ const App = () => {
     });
 
     const handleFilteringDataChange = (event) => {
-        setFilteringData({
-            ...filteringData,
-            [event.target.name]: event.target.value,
-        });
+        if (event.target.name === 'sortPriceAsc') {
+            event.target.checked
+                ? setFilteringData({
+                      ...filteringData,
+                      sortBy: 'price',
+                      sortOrder: 'asc',
+                  })
+                : setFilteringData(filteringData);
+        } else if (event.target.name === 'sortPriceDesc') {
+            event.target.checked
+                ? setFilteringData({
+                      ...filteringData,
+                      sortBy: 'price',
+                      sortOrder: 'desc',
+                  })
+                : setFilteringData(filteringData);
+        } else if (event.target.name === 'sortAddedAsc') {
+            event.target.checked
+                ? setFilteringData({
+                      ...filteringData,
+                      sortBy: 'addedTime',
+                      sortOrder: 'asc',
+                  })
+                : setFilteringData(filteringData);
+        } else if (event.target.name === 'sortAddedDesc') {
+            event.target.checked
+                ? setFilteringData({
+                      ...filteringData,
+                      sortBy: 'addedTime',
+                      sortOrder: 'desc',
+                  })
+                : setFilteringData(filteringData);
+        } else {
+            setFilteringData({
+                ...filteringData,
+                [event.target.name]: event.target.value,
+            });
+        }
     };
 
     return (

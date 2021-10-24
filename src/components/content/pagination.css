@@ -1,0 +1,31 @@
+.pagination {
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.page-item {
+    float: left;
+    padding: 5px 10px;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.page-link {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: #646464;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    box-sizing: border-box;
+    border-radius: 9px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 17px;
+    line-height: 228%;
+    text-decoration: none;
+}

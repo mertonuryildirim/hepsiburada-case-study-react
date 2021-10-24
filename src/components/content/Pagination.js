@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import './pagination.css';
 
 const Pagination = () => {
     const { products } = useSelector((state) => state.products);
@@ -11,6 +12,7 @@ const Pagination = () => {
 
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirtsProduct = indexOfLastProduct - productsPerPage;
+    //eslint-disable-next-line
     const currentProducts = products.slice(
         indexOfFirtsProduct,
         indexOfLastProduct,
@@ -26,6 +28,15 @@ const Pagination = () => {
     return (
         <div>
             <ul className="pagination">
+                <li className="page-item">
+                    <a
+                        onClick={() => handlePagination(currentPage - 1)}
+                        href="!#"
+                        className="page-link"
+                    >
+                        &lt;
+                    </a>
+                </li>
                 {pageNumbers.map((pageNumber) => (
                     <li key={pageNumber} className="page-item">
                         <a
@@ -37,6 +48,15 @@ const Pagination = () => {
                         </a>
                     </li>
                 ))}
+                <li className="page-item">
+                    <a
+                        onClick={() => handlePagination(currentPage + 1)}
+                        href="!#"
+                        className="page-link"
+                    >
+                        &gt;
+                    </a>
+                </li>
             </ul>
         </div>
     );

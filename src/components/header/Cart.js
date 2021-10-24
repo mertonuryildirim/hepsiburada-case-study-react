@@ -32,21 +32,29 @@ const Cart = () => {
                 <div></div>
             )}
             <div className="dropdown-content">
-                {cartItems.map((cartItem) => (
-                    <div key={cartItem.id} className="cart-content">
-                        <img src="110000068435156.jpg" alt="basket-item-img" />
-                        <div>
-                            <span>{cartItem.name}</span>
-                            <button
-                                onClick={() =>
-                                    handleOpenRemoveFromCartModal(cartItem.id)
-                                }
-                            >
-                                Kaldır
-                            </button>
+                {cartItems
+                    .slice(0)
+                    .reverse()
+                    .map((cartItem) => (
+                        <div key={cartItem.id} className="cart-content">
+                            <img
+                                src="110000068435156.jpg"
+                                alt="basket-item-img"
+                            />
+                            <div>
+                                <span>{cartItem.name}</span>
+                                <button
+                                    onClick={() =>
+                                        handleOpenRemoveFromCartModal(
+                                            cartItem.id,
+                                        )
+                                    }
+                                >
+                                    Kaldır
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
             </div>
 
             {showRemoveFromCartModal && (

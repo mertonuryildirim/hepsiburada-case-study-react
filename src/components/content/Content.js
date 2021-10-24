@@ -5,7 +5,7 @@ import './content.css';
 import Pagination from './Pagination';
 import Product from './Product';
 
-const Content = ({ filteringData }) => {
+const Content = ({ filteringData, handlePaginationChange }) => {
     const dispatch = useDispatch();
     const { products } = useSelector((state) => state.products);
 
@@ -24,7 +24,10 @@ const Content = ({ filteringData }) => {
                     ))}
                 </div>
 
-                <Pagination />
+                <Pagination
+                    filteringData={filteringData}
+                    handlePaginationChange={handlePaginationChange}
+                />
             </div>
         </div>
     );

@@ -19,9 +19,13 @@ const App = () => {
         sortOrder: '',
         sortBy: '',
         brand: '',
-        page: '',
-        limit: '37',
+        page: '1',
+        limit: '12',
     });
+
+    const handlePaginationChange = (pageNumber) => {
+        setFilteringData({ ...filteringData, page: pageNumber });
+    };
 
     const handleFilteringDataChange = (event) => {
         if (event.target.name === 'sortPriceAsc') {
@@ -81,7 +85,10 @@ const App = () => {
                     handleFilteringDataChange={handleFilteringDataChange}
                 />
 
-                <Content filteringData={filteringData} />
+                <Content
+                    filteringData={filteringData}
+                    handlePaginationChange={handlePaginationChange}
+                />
             </div>
 
             <Footer />

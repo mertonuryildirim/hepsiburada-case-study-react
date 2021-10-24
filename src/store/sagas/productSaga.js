@@ -10,7 +10,7 @@ import {
 function* handleListProducts(action) {
     try {
         const response = yield call(listProductsService, action.payload);
-        yield put(listProductsSuccess(response.data.products));
+        yield put(listProductsSuccess(response.data));
     } catch (error) {
         yield put(listProductsError());
     }

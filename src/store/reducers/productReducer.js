@@ -5,7 +5,10 @@ import {
 } from '../actions/actionTypes';
 
 const initialState = {
+    limit: '',
+    page: '',
     products: [],
+    totalCount: '',
     loading: false,
     error: '',
 };
@@ -15,7 +18,14 @@ const productReducer = (state = initialState, action) => {
         case LIST_PRODUCTS:
             return { ...state, loading: true, error: '' };
         case LIST_PRODUCTS_SUCCESS:
-            return { ...state, loading: false, products: action.payload };
+            return {
+                ...state,
+                loading: false,
+                limit: action.payload.limit,
+                page: action.payload.page,
+                products: action.payload.products,
+                totalCount: action.payload.totalCount,
+            };
         case LIST_PRODUCTS_ERROR:
             return {
                 ...state,

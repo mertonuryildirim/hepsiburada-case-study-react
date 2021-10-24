@@ -1,7 +1,13 @@
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../store/actions/cartActions';
 import './product.css';
 
 const Product = ({ product }) => {
-    const handleAddToCart = () => {};
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (product) => {
+        dispatch(addToCart(product));
+    };
 
     return (
         <div className="product">

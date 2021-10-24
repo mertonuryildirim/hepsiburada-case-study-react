@@ -11,7 +11,7 @@ const cartReducer = (state = initialState, action) => {
         case ADD_TO_CART:
             //Control the added item.
             let addedItem = state.cartItems.find(
-                (cartItem) => cartItem.product.id === action.payload.product.id,
+                (cartItem) => cartItem.id === action.payload.id,
             );
             //If item added before. Return the existing state
             if (addedItem) {

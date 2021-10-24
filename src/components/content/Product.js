@@ -1,14 +1,18 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/actions/cartActions';
 import './product.css';
 
 const Product = ({ product }) => {
     const dispatch = useDispatch();
-    const [isProductAdded, setIsProductAdded] = useState(false);
+    const { cartItems } = useSelector((state) => state.cartItems);
+
+    const isProductOnCart = (productId) => {
+        return (
+            cartItems.findIndex((cartItem) => cartItem.id === productId) === -1
+        );
+    };
 
     const handleAddToCart = (product) => {
-        setIsProductAdded(true);
         dispatch(addToCart(product));
     };
 
@@ -54,12 +58,12 @@ const Product = ({ product }) => {
             </div>
 
             <button
-                disabled={isProductAdded}
+                disabled={isProductOnCart(product.id) ? false : true}
                 onClick={() => handleAddToCart(product)}
             >
-                {isProductAdded
-                    ? 'Bu ürünü sepete ekleyemezsiniz.'
-                    : 'Sepete Ekle'}
+                {isProductOnCart(product.id)
+                    ? 'Sepete Ekle'
+                    : 'Bu ürünü sepete ekleyemezsiniz.'}
             </button>
         </div>
     );

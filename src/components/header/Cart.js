@@ -1,61 +1,52 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeFromCart } from '../../store/actions/cartActions';
 import './cart.css';
 
 const Cart = () => {
+    const dispatch = useDispatch();
+    const { cartItems } = useSelector((state) => state.cartItems);
+    const [deleteProductId, setDeleteProductId] = useState('');
     const [showRemoveFromCartModal, setShowRemoveFromCartModal] =
         useState(false);
 
-    const handleCloseRemoveFromCartModal = () => {
+    const handleCloseRemoveFromCartModal = (isProductDelete) => {
+        if (isProductDelete) {
+            dispatch(removeFromCart(deleteProductId));
+        }
+        setDeleteProductId('');
         setShowRemoveFromCartModal(false);
     };
 
-    const handleOpenRemoveFromCartModal = () => {
+    const handleOpenRemoveFromCartModal = (productId) => {
+        setDeleteProductId(productId);
         setShowRemoveFromCartModal(true);
     };
 
     return (
         <div className="dropdown">
             <button>Sepetim</button>
-            <span className="basket-quantity">3</span>
+            {cartItems.length ? (
+                <span className="basket-quantity">{cartItems.length}</span>
+            ) : (
+                <div></div>
+            )}
             <div className="dropdown-content">
-                <div className="cart-content">
-                    <img src="110000068435156.jpg" alt="basket-item-img" />
-                    <div>
-                        <span>
-                            Apple iPhone 11 Pro Maxi Phone 11 Pro Max iPhone 11
-                            (Max 2 Line)...
-                        </span>
-                        <button onClick={handleOpenRemoveFromCartModal}>
-                            Kaldır
-                        </button>
+                {cartItems.map((cartItem) => (
+                    <div key={cartItem.id} className="cart-content">
+                        <img src="110000068435156.jpg" alt="basket-item-img" />
+                        <div>
+                            <span>{cartItem.name}</span>
+                            <button
+                                onClick={() =>
+                                    handleOpenRemoveFromCartModal(cartItem.id)
+                                }
+                            >
+                                Kaldır
+                            </button>
+                        </div>
                     </div>
-                </div>
-
-                <div className="cart-content">
-                    <img src="110000068435156.jpg" alt="basket-item-img" />
-                    <div>
-                        <span>
-                            Apple iPhone 11 Pro Maxi Phone 11 Pro Max iPhone 11
-                            (Max 2 Line)...
-                        </span>
-                        <button onClick={handleOpenRemoveFromCartModal}>
-                            Kaldır
-                        </button>
-                    </div>
-                </div>
-
-                <div className="cart-content">
-                    <img src="110000068435156.jpg" alt="basket-item-img" />
-                    <div>
-                        <span>
-                            Apple iPhone 11 Pro Maxi Phone 11 Pro Max iPhone 11
-                            (Max 2 Line)...
-                        </span>
-                        <button onClick={handleOpenRemoveFromCartModal}>
-                            Kaldır
-                        </button>
-                    </div>
-                </div>
+                ))}
             </div>
 
             {showRemoveFromCartModal && (
@@ -79,10 +70,18 @@ const Cart = () => {
                             essentiall....
                         </div>
                         <div className="modal-footer">
-                            <button onClick={handleCloseRemoveFromCartModal}>
+                            <button
+                                onClick={() =>
+                                    handleCloseRemoveFromCartModal(true)
+                                }
+                            >
                                 EVET
                             </button>
-                            <button onClick={handleCloseRemoveFromCartModal}>
+                            <button
+                                onClick={() =>
+                                    handleCloseRemoveFromCartModal(false)
+                                }
+                            >
                                 HAYIR
                             </button>
                         </div>

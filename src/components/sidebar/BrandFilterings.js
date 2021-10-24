@@ -1,4 +1,4 @@
-const BrandFilterings = () => {
+const BrandFilterings = ({ handleFilteringDataChange }) => {
     return (
         <div className="filter-options">
             <span>Samsung</span>

@@ -1,4 +1,4 @@
-const OrderFiltering = () => {
+const OrderFiltering = ({ handleFilteringDataChange }) => {
     return (
         <div className="filter-options">
             <span>En Düşük Fiyat</span>

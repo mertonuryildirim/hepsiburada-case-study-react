@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './app.css';
 import Content from './components/content/Content';
 import Footer from './components/footer/Footer';
@@ -6,16 +7,35 @@ import Sidebar from './components/sidebar/Sidebar';
 import Subheader from './components/subHeader/Subheader';
 
 const App = () => {
+    const [filteringData, setFilteringData] = useState({
+        search: '',
+        color: '',
+        sortOrder: '',
+        sortBy: '',
+        brand: '',
+        page: '',
+        limit: '',
+    });
+
+    const handleFilteringDataChange = (event) => {
+        setFilteringData({
+            ...filteringData,
+            [event.target.name]: event.target.value,
+        });
+    };
+
     return (
         <div className="app">
-            <Header />
+            <Header handleFilteringDataChange={handleFilteringDataChange} />
 
-            <Subheader />
+            <Subheader handleFilteringDataChange={handleFilteringDataChange} />
 
             <div className="app-body">
-                <Sidebar />
+                <Sidebar
+                    handleFilteringDataChange={handleFilteringDataChange}
+                />
 
-                <Content />
+                <Content filteringData={filteringData} />
             </div>
 
             <Footer />

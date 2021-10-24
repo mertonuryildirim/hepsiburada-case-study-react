@@ -3,23 +3,29 @@ import OrderFiltering from './OrderFiltering';
 import './sidebar.css';
 import TagsFiltering from './TagsFiltering';
 
-const Sidebar = () => {
+const Sidebar = ({ handleFilteringDataChange }) => {
     return (
         <div className="sidebar">
             <div className="sidebar-filters">
                 <div style={{ marginBottom: '20px' }}>
                     <span className="sidebar-filter-title">Renk</span>
-                    <TagsFiltering />
+                    <TagsFiltering
+                        handleFilteringDataChange={handleFilteringDataChange}
+                    />
                 </div>
 
                 <div style={{ marginBottom: '20px' }}>
                     <span className="sidebar-filter-title">Sıralama</span>
-                    <OrderFiltering />
+                    <OrderFiltering
+                        handleFilteringDataChange={handleFilteringDataChange}
+                    />
                 </div>
 
                 <div style={{ marginBottom: '20px' }}>
                     <span className="sidebar-filter-title">Marka</span>
-                    <BrandFilterings />
+                    <BrandFilterings
+                        handleFilteringDataChange={handleFilteringDataChange}
+                    />
                 </div>
             </div>
         </div>

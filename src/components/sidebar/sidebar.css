@@ -26,7 +26,7 @@
     min-width: -webkit-fill-available;
 }
 
-.filter-options > span {
+.filter-options > label {
     display: block;
     position: relative;
     cursor: pointer;
@@ -41,6 +41,10 @@
     color: #646464;
 }
 
-.filter-options > span:active {
+.filter-options > label > input {
+    display: none;
+}
+
+:checked + span {
     color: #ff6000;
 }

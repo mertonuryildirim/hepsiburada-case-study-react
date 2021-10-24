@@ -1,6 +1,6 @@
 import './subheader.css';
 
-const Subheader = () => {
+const Subheader = ({ handleFilteringDataChange }) => {
     return (
         <div className="subheader">
             <div className="search-result">

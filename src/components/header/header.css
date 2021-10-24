@@ -3,7 +3,7 @@
     top: 0;
     display: flex;
     background-color: #ffffff;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;

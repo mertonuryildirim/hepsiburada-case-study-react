@@ -24,7 +24,6 @@ const cartReducer = (state = initialState, action) => {
                 };
             }
         case REMOVE_FROM_CART:
-            console.log(action.payload.id);
             return {
                 ...state,
                 cartItems: state.cartItems.filter(

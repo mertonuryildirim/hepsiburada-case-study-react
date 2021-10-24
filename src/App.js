@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './app.css';
 import Content from './components/content/Content';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
 import Subheader from './components/subHeader/Subheader';
+import { fullFillCart } from './store/actions/cartActions';
 
 const App = () => {
+    const dispatch = useDispatch();
     const [sortCheckboxEvent, setSortCheckboxEvent] = useState({
         sortPriceAsc: false,
         sortPriceDesc: false,
@@ -67,6 +70,10 @@ const App = () => {
             });
         }
     };
+
+    useEffect(() => {
+        dispatch(fullFillCart());
+    }, [dispatch]);
 
     return (
         <div className="app">

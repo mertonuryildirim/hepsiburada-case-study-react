@@ -1,4 +1,8 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from '../actions/actionTypes';
+import {
+    ADD_TO_CART,
+    FULL_FILL_CART,
+    REMOVE_FROM_CART,
+} from '../actions/actionTypes';
 
 const initialState = {
     cartItems: [],
@@ -6,6 +10,16 @@ const initialState = {
 
 const cartReducer = (state = initialState, action) => {
     switch (action.type) {
+        case FULL_FILL_CART:
+            if (JSON.parse(localStorage.getItem('cart')) !== null) {
+                return {
+                    ...state,
+                    cartItems: JSON.parse(localStorage.getItem('cart'))
+                        .cartItems,
+                };
+            } else {
+                return { ...state };
+            }
         case ADD_TO_CART:
             let addedItem = state.cartItems.find(
                 (cartItem) => cartItem.id === action.payload.id,

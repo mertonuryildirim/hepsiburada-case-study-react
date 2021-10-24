@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from '@redux-saga/core/effects';
+import { call, put, takeLatest } from '@redux-saga/core/effects';
 import { listProductsService } from '../../utils/api';
 import { LIST_PRODUCTS } from '../actions/actionTypes';
 import {
@@ -18,5 +18,5 @@ function* handleListProducts(action) {
 
 //watcher saga.
 export default function* watchListProductsSaga() {
-    yield takeEvery(LIST_PRODUCTS, handleListProducts);
+    yield takeLatest(LIST_PRODUCTS, handleListProducts);
 }

@@ -1,4 +1,8 @@
+import { useSelector } from 'react-redux';
+
 const TagsFiltering = ({ handleFilteringDataChange }) => {
+    const { products } = useSelector((state) => state.products);
+
     const handleTagsFilteringChange = (event) => {
         if (event.target.checked) {
             handleFilteringDataChange(event);
@@ -16,7 +20,15 @@ const TagsFiltering = ({ handleFilteringDataChange }) => {
                     value="Lacivert"
                     onChange={(e) => handleTagsFilteringChange(e)}
                 />
-                <span>Lacivert</span>
+                <span>
+                    Lacivert (
+                    {
+                        products.filter(
+                            (product) => product.color === 'lacivert',
+                        ).length
+                    }
+                    )
+                </span>
             </label>
 
             <label>
@@ -26,7 +38,14 @@ const TagsFiltering = ({ handleFilteringDataChange }) => {
                     value="Sarı"
                     onChange={(e) => handleTagsFilteringChange(e)}
                 />
-                <span>Sarı</span>
+                <span>
+                    Sarı (
+                    {
+                        products.filter((product) => product.color === 'sarı')
+                            .length
+                    }
+                    )
+                </span>
             </label>
 
             <label>
@@ -36,7 +55,14 @@ const TagsFiltering = ({ handleFilteringDataChange }) => {
                     value="Siyah"
                     onChange={(e) => handleTagsFilteringChange(e)}
                 />
-                <span>Siyah</span>
+                <span>
+                    Siyah (
+                    {
+                        products.filter((product) => product.color === 'siyah')
+                            .length
+                    }
+                    )
+                </span>
             </label>
 
             <label>
@@ -46,7 +72,14 @@ const TagsFiltering = ({ handleFilteringDataChange }) => {
                     value="Beyaz"
                     onChange={(e) => handleTagsFilteringChange(e)}
                 />
-                <span>Beyaz</span>
+                <span>
+                    Beyaz (
+                    {
+                        products.filter((product) => product.color === 'beyaz')
+                            .length
+                    }
+                    )
+                </span>
             </label>
         </div>
     );

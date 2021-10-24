@@ -1,6 +1,11 @@
 const TagsFiltering = ({ handleFilteringDataChange }) => {
     const handleTagsFilteringChange = (event) => {
-        handleFilteringDataChange(event);
+        if (event.target.checked) {
+            handleFilteringDataChange(event);
+        } else {
+            event.target.value = '';
+            handleFilteringDataChange(event);
+        }
     };
     return (
         <div className="filter-options">

@@ -76,6 +76,7 @@ const App = () => {
                 sortCheckboxEvent={sortCheckboxEvent}
                 setSortCheckboxEvent={setSortCheckboxEvent}
                 handleFilteringDataChange={handleFilteringDataChange}
+                searchValue={filteringData.search}
             />
 
             <div className="app-body">

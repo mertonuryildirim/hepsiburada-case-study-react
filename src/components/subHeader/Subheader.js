@@ -4,15 +4,20 @@ const Subheader = ({
     handleFilteringDataChange,
     sortCheckboxEvent,
     setSortCheckboxEvent,
+    searchValue,
 }) => {
     return (
         <div className="subheader">
-            <div className="search-result">
-                <span>iPhone İOS cep telefonu</span> <br />
-                <div>
-                    <h4>Aranan Kelime:</h4> <p>iphone 11</p>
+            {searchValue.length ? (
+                <div className="search-result">
+                    <span>{searchValue}</span> <br />
+                    <div>
+                        <h4>Aranan Kelime:</h4> <p>{searchValue}</p>
+                    </div>
                 </div>
-            </div>
+            ) : (
+                <div></div>
+            )}
 
             <div className="dropdown">
                 <button>Sıralama &#9660;</button>

@@ -35,7 +35,7 @@ const App = () => {
             event.target.checked
                 ? setFilteringData({
                       ...filteringData,
-                      sortBy: 'price',
+                      sortBy: 'newPrice',
                       sortOrder: 'asc',
                   })
                 : setFilteringData(filteringData);
@@ -43,7 +43,7 @@ const App = () => {
             event.target.checked
                 ? setFilteringData({
                       ...filteringData,
-                      sortBy: 'price',
+                      sortBy: 'newPrice',
                       sortOrder: 'desc',
                   })
                 : setFilteringData(filteringData);

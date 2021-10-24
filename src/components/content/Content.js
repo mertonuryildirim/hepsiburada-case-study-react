@@ -2,6 +2,7 @@ import { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../../store/actions/productActions';
 import './content.css';
+import Pagination from './Pagination';
 import Product from './Product';
 
 const Content = ({ filteringData }) => {
@@ -23,9 +24,7 @@ const Content = ({ filteringData }) => {
                     ))}
                 </div>
 
-                <div className="center">
-                    <div className="pagination">Pagination</div>
-                </div>
+                <Pagination />
             </div>
         </div>
     );

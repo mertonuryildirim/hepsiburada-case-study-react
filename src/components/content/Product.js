@@ -52,10 +52,7 @@ const Product = ({ product }) => {
             </div>
 
             <h4 className="product-new-price">
-                {(
-                    Number(product.price) -
-                    Number(product.price) * (Number(product.discountRate) / 100)
-                ).toFixed(2)}
+                {product.newPrice}
                 &nbsp;TL
             </h4>
 

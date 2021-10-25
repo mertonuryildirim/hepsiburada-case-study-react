@@ -21,7 +21,7 @@ const Subheader = ({
 
             <div className="dropdown">
                 <button>Sıralama &#9660;</button>
-                <div className="dropdown-content">
+                <div style={{ width: '150px' }} className="dropdown-content">
                     <div
                         style={{ textAlign: 'center' }}
                         className="filter-options"

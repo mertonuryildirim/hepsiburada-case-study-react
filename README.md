@@ -1,14 +1,10 @@
-# Dev branch is using for local starts & development
+# Hepsiburada Case Study React Frontend
 
-## JSON SERVER CONF
+## NODE.JS SERVER CONF
 
-Json server runs at https://market-app-assignment.herokuapp.com/api
+Node.Js Server https://github.com/mertonuryildirim/hepsiburada-case-study-node
 
-If you want to run json server locally you have to change /src/utils/api.ts "url" variable with your json-server running port.
-
-## DOCUMENTATION OF THE PROJECT
-
-Comment lines are written for each feature such as components, functionalities etc.
+Node.js server must be run for the project to work properly.
 
 ## Available Scripts
 

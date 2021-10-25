@@ -19,8 +19,8 @@ const App = () => {
     const [filteringData, setFilteringData] = useState({
         search: '',
         color: [],
-        sortOrder: '',
-        sortBy: '',
+        sortOrder: 'desc',
+        sortBy: 'addedTime',
         brand: [],
         page: '1',
         limit: '12',

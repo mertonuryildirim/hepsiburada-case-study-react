@@ -18,10 +18,10 @@ const App = () => {
     });
     const [filteringData, setFilteringData] = useState({
         search: '',
-        color: '',
+        color: [],
         sortOrder: '',
         sortBy: '',
-        brand: '',
+        brand: [],
         page: '1',
         limit: '12',
     });

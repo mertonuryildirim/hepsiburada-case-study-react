@@ -5,6 +5,24 @@
     border-radius: 10%;
     min-width: 254px;
     max-width: 254px;
+    min-height: 481px;
+}
+
+.product:hover {
+    border: 0.1px solid lightgray;
+    border-radius: 3%;
+}
+
+.product:hover .brand,
+.product:hover .color,
+.product:hover .product-new-price,
+.product:hover .product-old-price {
+    display: none;
+}
+
+.product:hover .add-cart-button {
+    display: block;
+    margin-top: 45px;
 }
 
 .product-image {
@@ -77,6 +95,7 @@ p {
 }
 
 .product > button {
+    display: none;
     border: none;
     outline: 0;
     padding: 7px;

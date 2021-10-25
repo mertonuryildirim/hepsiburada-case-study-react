@@ -41,12 +41,12 @@ const Product = ({ product }) => {
 
             <p>{product.name}</p>
 
-            <div>
+            <div className="brand">
                 <h4>Marka:</h4>
                 <p>{product.brand}</p>
             </div>
 
-            <div>
+            <div className="color">
                 <h4>Renk:</h4>
                 <p>{product.color}</p>
             </div>
@@ -65,6 +65,7 @@ const Product = ({ product }) => {
             </div>
 
             <button
+                className="add-cart-button"
                 disabled={isProductOnCart(product.id) ? false : true}
                 onClick={() => handleAddToCart(product)}
             >

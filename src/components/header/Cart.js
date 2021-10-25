@@ -51,6 +51,8 @@ const Cart = () => {
                             <img
                                 src="110000068435156.jpg"
                                 alt="basket-item-img"
+                                width="50px"
+                                height="60px"
                             />
                             <div>
                                 <span>{cartItem.name}</span>

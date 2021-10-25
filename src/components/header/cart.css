@@ -1,19 +1,14 @@
 .cart-content {
     display: flex;
-    justify-content: space-between;
-    padding: 10px 10px;
-}
-
-.cart-content > img {
-    width: 50px;
-    height: 60px;
+    flex-direction: row;
+    padding: 20px;
 }
 
 .cart-content > div {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 0px 10px;
+    padding: 5px 10px;
+    margin-left: 5px;
 }
 
 .cart-content > div > span {

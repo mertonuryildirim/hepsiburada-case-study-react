@@ -63,6 +63,28 @@ const App = () => {
                       sortOrder: 'desc',
                   })
                 : setFilteringData(filteringData);
+        } else if (event.target.name === 'color') {
+            let colorArr = [...filteringData.color];
+            event.target.checked
+                ? colorArr.push(event.target.value)
+                : (colorArr = colorArr.filter(
+                      (item) => item !== event.target.value,
+                  ));
+            setFilteringData({
+                ...filteringData,
+                color: colorArr,
+            });
+        } else if (event.target.name === 'brand') {
+            let brandArr = [...filteringData.brand];
+            event.target.checked
+                ? brandArr.push(event.target.value)
+                : (brandArr = brandArr.filter(
+                      (item) => item !== event.target.value,
+                  ));
+            setFilteringData({
+                ...filteringData,
+                brand: brandArr,
+            });
         } else {
             setFilteringData({
                 ...filteringData,
@@ -70,6 +92,8 @@ const App = () => {
             });
         }
     };
+
+    console.log(filteringData);
 
     useEffect(() => {
         dispatch(fullFillCart());
